@@ -8,11 +8,14 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let sessionId = sessionStorage.getItem('pam_chat_session') || '';
+  let sessionId = localStorage.getItem('pam_chat_session') || '';
   if (!sessionId) {
     sessionId = crypto.randomUUID ? crypto.randomUUID() : `s-${Date.now()}-${Math.random().toString(36).slice(2)}`;
-    sessionStorage.setItem('pam_chat_session', sessionId);
+    localStorage.setItem('pam_chat_session', sessionId);
   }
+  // Memoria conversacional: se restaura al abrir la página y se actualiza
+  // en cada mensaje. Supabase si está configurado; localStorage si no.
+  let historial = [];
 
   /* --------------------------- Navegación -------------------------------- */
   const nav = $('#nav');
@@ -95,7 +98,9 @@
   function cargarEstado() {
     $('#contactStatusText').textContent = 'Asistente en línea para atenderte';
     $('#contactStatus .status-dot').classList.add('online');
-    $('#chatFootnote').textContent = 'Asistente local · sin servicios externos';
+    const memoria = window.PAM_MEMORIA;
+    const etiqueta = memoria && memoria.activo ? 'Supabase conectado' : 'memoria en este navegador';
+    $('#chatFootnote').textContent = `Asistente local · ${etiqueta}`;
   }
   cargarEstado();
 
@@ -160,6 +165,34 @@
     mensajes.scrollTop = mensajes.scrollHeight;
   }
 
+  async function cargarMemoria() {
+    const memoria = window.PAM_MEMORIA;
+    if (!memoria) return;
+    try {
+      historial = await memoria.leer(sessionId);
+      historial.slice(-6).forEach((m) => {
+        anadirMensaje(m.contenido, m.rol === 'customer' ? 'user' : 'bot');
+      });
+      if (historial.length) {
+        $('#chatFootnote').textContent += ` · retomamos tu conversación (${historial.length} mensajes)`;
+      }
+    } catch (error) {
+      console.warn('No se pudo leer la memoria del chat:', error);
+      $('#chatFootnote').textContent += ' · memoria local temporal';
+    }
+  }
+  cargarMemoria();
+
+  async function guardarEnMemoria(rol, contenido) {
+    const memoria = window.PAM_MEMORIA;
+    if (!memoria) return;
+    try {
+      await memoria.guardar(sessionId, rol, contenido);
+    } catch (error) {
+      console.warn('No se pudo guardar en la memoria del chat:', error);
+    }
+  }
+
   function indicadorEscritura() {
     const nodo = document.createElement('div');
     nodo.className = 'chat-message chat-message--bot';
@@ -175,14 +208,19 @@
     const mensaje = input.value.trim();
     if (!mensaje) return;
     anadirMensaje(mensaje, 'user');
+    historial.push({ rol: 'customer', contenido: mensaje });
+    void guardarEnMemoria('customer', mensaje);
     input.value = '';
     ocupado = true;
     enviarBtn.disabled = true;
     const espera = indicadorEscritura();
     try {
-      const datos = window.PAM_ATENCION.responder(mensaje);
+      const datos = window.PAM_ATENCION.responder(mensaje, historial);
+      const respuesta = datos.respuesta || 'No se recibió respuesta del canal de atención.';
       espera.remove();
-      anadirMensaje(datos.respuesta || 'No se recibió respuesta del canal de atención.', 'bot');
+      anadirMensaje(respuesta, 'bot');
+      historial.push({ rol: 'assistant', contenido: respuesta });
+      void guardarEnMemoria('assistant', respuesta);
     } catch (error) {
       espera.remove();
       anadirMensaje(`No pude completar la solicitud: ${error.message}. Intenta de nuevo.`, 'bot');
