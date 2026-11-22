@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#072b3d">
+  <meta name="description" content="Puerto A&M. Cocina, barra y hospitalidad en un espacio diseñado para disfrutar cada detalle.">
+  <meta property="og:title" content="Puerto A&M — Cocina & Hospitalidad">
+  <meta property="og:description" content="Un concepto gastronómico donde el sabor, el diseño y la atención se encuentran.">
+  <meta property="og:type" content="website">
+  <title>Puerto A&M — Cocina &amp; Hospitalidad</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23072b3d'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='20' font-weight='bold' letter-spacing='-2' text-anchor='middle' fill='%23d9b979'%3EPA%26M%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/landing.css">
+</head>
+<body>
+
+<!-- ============================== NAV ============================== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#inicio" aria-label="Puerto A&M, inicio">
+      <span class="brand-mark" aria-hidden="true"><span>PA</span><i>&amp;</i><span>M</span></span>
+      <span class="brand-text"><strong>PUERTO A&amp;M</strong><small>COCINA &amp; HOSPITALIDAD</small></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+      <a href="#inicio" class="active">Inicio</a>
+      <a href="#concepto">Concepto</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn-outline btn-sm nav-cta" href="#contacto">Reservar mesa</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============================== HERO ============================== -->
+  <section class="hero" id="inicio">
+    <div class="hero-glow hero-glow--one" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow--two" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow reveal"><span class="eyebrow-line"></span> UNA FORMA DE RECIBIRTE</p>
+        <h1 class="reveal" style="--d:80ms">
+          El sabor se vuelve<br>
+          <span class="hero-accent">experiencia.</span>
+        </h1>
+        <p class="hero-lead reveal" style="--d:160ms">
+          En Puerto A&amp;M reunimos cocina, barra y hospitalidad en un espacio pensado para
+          que cada visita tenga su propio ritmo. De la primera copa al último bocado,
+          cada detalle está a tu servicio.
+        </p>
+        <div class="hero-actions reveal" style="--d:240ms">
+          <a class="btn btn-primary" href="#servicios">
+            Descubre lo que ofrecemos
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
+          </a>
+          <button class="btn btn-text" data-chat-open data-prefill="¿Qué servicios ofrecen?">
+            <span class="btn-text-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+            </span>
+            Pregúntale al asistente
+          </button>
+        </div>
+        <div class="hero-meta reveal" style="--d:320ms">
+          <span><i class="meta-dot"></i> Atención personalizada</span>
+          <span><i class="meta-dot"></i> Concepto de temporada</span>
+        </div>
+      </div>
+
+      <!-- Composición visual 100% CSS/SVG: sin fotografías externas -->
+      <div class="hero-visual reveal" style="--d:200ms" aria-hidden="true">
+        <div class="visual-frame">
+          <div class="visual-orbit visual-orbit--outer"></div>
+          <div class="visual-orbit visual-orbit--inner"></div>
+          <div class="visual-disc"></div>
+          <svg class="visual-waves" viewBox="0 0 600 600" preserveAspectRatio="none">
+            <path class="wave wave--1" d="M-40 360 C 120 290, 200 430, 340 350 S 520 280, 660 350"/>
+            <path class="wave wave--2" d="M-40 400 C 120 330, 220 470, 360 390 S 530 320, 660 390"/>
+            <path class="wave wave--3" d="M-40 440 C 130 370, 230 510, 380 430 S 540 360, 660 430"/>
+          </svg>
+          <svg class="visual-monogram" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" stroke-opacity=".28"/>
+            <circle cx="100" cy="100" r="62" fill="none" stroke="currentColor" stroke-opacity=".16" stroke-dasharray="2 7"/>
+            <text x="100" y="112" text-anchor="middle" font-family="Manrope, sans-serif" font-size="46" font-weight="700" letter-spacing="-4" fill="currentColor">PA&amp;M</text>
+            <path d="M62 138h76" stroke="currentColor" stroke-width="1" stroke-opacity=".5"/>
+          </svg>
+          <div class="float-card float-card--top">
+            <span class="float-card-label">BARRA</span>
+            <strong>Coctelería de autor</strong>
+          </div>
+          <div class="float-card float-card--bottom">
+            <span class="float-card-label">COCINA</span>
+            <strong>De la tierra al mar</strong>
+          </div>
+          <div class="visual-index">01 / 04</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true"><span></span>DESLIZA PARA EXPLORAR</div>
+  </section>
+
+  <!-- ============================ SELLO ============================ -->
+  <section class="marquee" aria-label="Lo que nos distingue">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span>COCINA DE TEMPORADA</span><i></i><span>BARRA &amp; COCTELERÍA</span><i></i>
+        <span>EVENTOS PRIVADOS</span><i></i><span>ATENCIÓN PERSONALIZADA</span><i></i>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <span>COCINA DE TEMPORADA</span><i></i><span>BARRA &amp; COCTELERÍA</span><i></i>
+        <span>EVENTOS PRIVADOS</span><i></i><span>ATENCIÓN PERSONALIZADA</span><i></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CONCEPTO ============================ -->
+  <section class="section concept" id="concepto">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="eyebrow-line"></span> EL CONCEPTO</p>
+      <h2>Un lugar para<br><em>quedarse un poco más.</em></h2>
+    </div>
+
+    <div class="concept-grid">
+      <div class="concept-visual reveal" style="--d:100ms" aria-hidden="true">
+        <div class="concept-shape">
+          <div class="concept-shape-inner"></div>
+          <div class="concept-rule concept-rule--a"></div>
+          <div class="concept-rule concept-rule--b"></div>
+          <span class="concept-word concept-word--one">SABOR</span>
+          <span class="concept-word concept-word--two">DISEÑO</span>
+          <span class="concept-word concept-word--three">CALIDEZ</span>
+        </div>
+      </div>
+      <div class="concept-copy reveal" style="--d:180ms">
+        <span class="section-number">01 — NUESTRA ESENCIA</span>
+        <p class="lead">
+          Creemos que una buena mesa no se mide sólo por lo que sirve, sino por cómo
+          te hace sentir mientras estás en ella.
+        </p>
+        <p>
+          Puerto A&amp;M nace de esa idea: un espacio donde la cocina, la barra y el
+          servicio conversan entre sí. Un concepto pensado para comidas que se
+          prolongan, conversaciones que no se apresuran y momentos que se recuerdan.
+        </p>
+        <ul class="feature-list">
+          <li><span class="check-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg></span> Propuestas pensadas para cada temporada</li>
+          <li><span class="check-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg></span> Barra con personalidad propia</li>
+          <li><span class="check-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg></span> Espacios para compartir o para ti</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SERVICIOS ============================ -->
+  <section class="section services" id="servicios">
+    <div class="section-head section-head--split reveal">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line"></span> LO QUE HACEMOS</p>
+        <h2>Tres formas de<br><em>vivir Puerto A&amp;M.</em></h2>
+      </div>
+      <p class="section-head-note">
+        Elige la experiencia que buscas. Nuestro asistente puede orientarte
+        y registrar tu solicitud al instante.
+      </p>
+    </div>
+
+    <div class="service-grid">
+      <article class="service-card reveal" style="--d:60ms">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M12 8v14a6 6 0 0 0 12 0V8M18 8v32M36 8c-4 3-5 8-5 13h5v19"/><path d="M8 40h28"/></svg>
+        </div>
+        <span class="service-index">01</span>
+        <h3>Restaurante</h3>
+        <p>Una carta de temporada que combina técnicas cuidadas, ingredientes honestos y presentaciones con carácter.</p>
+        <button class="service-link" data-chat-open data-prefill="Quiero información sobre el restaurante">
+          Consultar disponibilidad <span aria-hidden="true">↗</span>
+        </button>
+      </article>
+
+      <article class="service-card service-card--featured reveal" style="--d:140ms">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M10 16h28l-3 24H13z"/><path d="M24 16c4-4 9-4 11-1M22 16c-3-5-8-6-11-3"/><path d="M17 24h14M18 31h12"/></svg>
+        </div>
+        <span class="service-index">02</span>
+        <h3>Barra &amp; coctelería</h3>
+        <p>Un espacio para brindar. Clásicos reinterpretados y propuestas de autor para acompañar cada momento de la noche.</p>
+        <button class="service-link" data-chat-open data-prefill="Quiero información sobre la barra">
+          Preguntar por la barra <span aria-hidden="true">↗</span>
+        </button>
+      </article>
+
+      <article class="service-card reveal" style="--d:220ms">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M8 40V20l16-9 16 9v20z"/><path d="M8 40h32M19 40V29h10v11M16 24h.01M32 24h.01"/></svg>
+        </div>
+        <span class="service-index">03</span>
+        <h3>Eventos privados</h3>
+        <p>Celebraciones, reuniones y encuentros con un servicio pensado a la medida de cada ocasión.</p>
+        <button class="service-link" data-chat-open data-prefill="Quiero organizar un evento privado">
+          Solicitar información <span aria-hidden="true">↗</span>
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================ EXPERIENCIA ============================ -->
+  <section class="section experience" id="experiencia">
+    <div class="experience-inner">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span> CÓMO SE VIVE</p>
+        <h2>Cada momento,<br><em>en su lugar.</em></h2>
+      </div>
+      <div class="timeline" id="timeline">
+        <div class="timeline-line"><span id="timelineProgress"></span></div>
+        <article class="timeline-item reveal">
+          <span class="timeline-dot"></span>
+          <span class="timeline-time">01</span>
+          <h3>La bienvenida</h3>
+          <p>Un espacio que te recibe con calma desde el primer momento.</p>
+        </article>
+        <article class="timeline-item reveal" style="--d:80ms">
+          <span class="timeline-dot"></span>
+          <span class="timeline-time">02</span>
+          <h3>La primera copa</h3>
+          <p>La barra abre la conversación y marca el tono de la visita.</p>
+        </article>
+        <article class="timeline-item reveal" style="--d:160ms">
+          <span class="timeline-dot"></span>
+          <span class="timeline-time">03</span>
+          <h3>La mesa</h3>
+          <p>Cocina de temporada servida con atención a cada detalle.</p>
+        </article>
+        <article class="timeline-item reveal" style="--d:240ms">
+          <span class="timeline-dot"></span>
+          <span class="timeline-time">04</span>
+          <h3>El regreso</h3>
+          <p>Lo mejor de una experiencia es querer repetirla.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CONTACTO ============================ -->
+  <section class="section contact" id="contacto">
+    <div class="contact-inner">
+      <div class="contact-intro reveal">
+        <p class="eyebrow eyebrow--light"><span class="eyebrow-line"></span> HABLEMOS</p>
+        <h2>Cuéntanos qué<br><em>estás buscando.</em></h2>
+        <p>
+          Reservaciones, eventos o cualquier pregunta: déjanos tu mensaje.
+          Tu solicitud queda registrada y nuestro canal de atención puede responderte.
+        </p>
+        <div class="contact-status" id="contactStatus" aria-live="polite">
+          <span class="status-dot"></span>
+          <span id="contactStatusText">Consultando estado del asistente…</span>
+        </div>
+        <div class="contact-aside">
+          <button class="btn btn-ghost-light" data-chat-open data-prefill="Hola, ¿podrían ayudarme con una reservación?">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+            Abrir chat
+          </button>
+          <p>También puedes escribirnos desde el asistente flotante.</p>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" style="--d:120ms" id="contactForm" novalidate>
+        <div class="form-row">
+          <label class="form-field">
+            <span>Nombre</span>
+            <input type="text" name="nombre" autocomplete="name" placeholder="Tu nombre" required maxlength="120">
+          </label>
+          <label class="form-field">
+            <span>Correo electrónico</span>
+            <input type="email" name="email" autocomplete="email" placeholder="nombre@correo.com" required maxlength="160">
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="form-field">
+            <span>Teléfono <small>(opcional)</small></span>
+            <input type="tel" name="telefono" autocomplete="tel" placeholder="10 dígitos" maxlength="40">
+          </label>
+          <label class="form-field">
+            <span>Asunto</span>
+            <select name="asunto">
+              <option value="Reservación">Reservación</option>
+              <option value="Evento privado">Evento privado</option>
+              <option value="Información general">Información general</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </label>
+        </div>
+        <label class="form-field">
+          <span>Mensaje</span>
+          <textarea name="mensaje" rows="5" placeholder=" ¿En qué podemos ayudarte?" required maxlength="2000"></textarea>
+        </label>
+        <button class="btn btn-primary btn-block" type="submit" id="contactSubmit">
+          Enviar solicitud
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
+        </button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite">
+          Al enviar, tu solicitud se registra en nuestro canal de atención. No te pedimos datos financieros.
+        </p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true"><span>PA</span><i>&amp;</i><span>M</span></span>
+      <div>
+        <strong>PUERTO A&amp;M</strong>
+        <p>Cocina &amp; hospitalidad</p>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Enlaces del pie de página">
+      <a href="#concepto">Concepto</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Puerto A&amp;M</span>
+      <span class="footer-sep">·</span>
+      <span>Información operativa y financiera disponible sólo en el panel autorizado.</span>
+      <span class="footer-admin">Versión pública · demostración</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ CHAT WIDGET ============================ -->
+<div class="chat-widget" id="chatWidget">
+  <button class="chat-launcher" id="chatLauncher" aria-label="Abrir asistente" aria-expanded="false">
+    <svg class="chat-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.5 11.5h7M12 8v7"/></svg>
+    <svg class="chat-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    <span class="chat-pulse" aria-hidden="true"></span>
+  </button>
+
+  <section class="chat-panel" id="chatPanel" aria-label="Asistente de Puerto A&M" hidden>
+    <header class="chat-header">
+      <div class="chat-avatar" aria-hidden="true">PA</div>
+      <div class="chat-header-copy">
+        <strong>Asistente Puerto A&amp;M</strong>
+        <span id="chatStatus"><i class="status-dot"></i> En línea · atención local</span>
+      </div>
+      <button class="chat-close" id="chatClose" aria-label="Cerrar asistente">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </header>
+
+    <div class="chat-messages" id="chatMessages" aria-live="polite">
+      <div class="chat-message chat-message--bot">
+        <div class="bubble">
+          Hola. Soy el asistente de Puerto A&amp;M. Puedo orientarte sobre nuestros servicios y registrar tus solicitudes.
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-suggestions" id="chatSuggestions">
+      <button data-prefill="¿Qué servicios ofrecen?">¿Qué servicios ofrecen?</button>
+      <button data-prefill="Quiero hacer una reservación">Quiero hacer una reservación</button>
+      <button data-prefill="¿Cómo puedo solicitar un evento privado?">Eventos privados</button>
+    </div>
+
+    <form class="chat-form" id="chatForm">
+      <label class="sr-only" for="chatInput">Escribe tu mensaje</label>
+      <input id="chatInput" type="text" placeholder="Escribe tu mensaje…" autocomplete="off" maxlength="2000">
+      <button type="submit" aria-label="Enviar mensaje">
+        <svg viewBox="0 0 24 24"><path d="m4 12 16-8-6 16-3-6z"/></svg>
+      </button>
+    </form>
+    <p class="chat-footnote" id="chatFootnote">Canal de atención · sin acceso a datos financieros</p>
+  </section>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="assets/js/atencion.js"></script>
+  <script src="assets/js/landing.js"></script>
+</body>
+</html>
