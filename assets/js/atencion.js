@@ -33,8 +33,10 @@
     // Retoma el último tema cuando el cliente habla de "eso" o pide más info.
     function retomar(ultimo) {
       const t = normalizar(ultimo ? ultimo.contenido : '');
-      if (t.includes('reservac')) return `Seguimos con la reservación. ${FORMULARIO} Incluye fecha, hora y número de personas.`;
-      if (t.includes('evento')) return `Seguimos con el evento privado. ${FORMULARIO} Cuéntame el tipo de celebración, fecha aproximada e invitados.`;
+      // Revisar reservación antes que evento: el saludo menciona "eventos
+      // privados" y podría hacer creer que ése era el tema anterior.
+      if (/reserv|mesa|disponibilidad|personas/.test(t)) return `Seguimos con la reservación. ${FORMULARIO} Incluye fecha, hora y número de personas.`;
+      if (/evento|celebrac|reunion|cumplea|boda|cotizac/.test(t)) return `Seguimos con el evento privado. ${FORMULARIO} Cuéntame el tipo de celebración, fecha aproximada e invitados.`;
       if (t.includes('barra')) return `Seguimos con la barra. **Barra & coctelería** — ${SERVICIOS[1][1]}. ${FORMULARIO}`;
       if (t.includes('restaurante')) return `Seguimos con el restaurante. **Restaurante** — ${SERVICIOS[0][1]}. ${FORMULARIO}`;
       return SERVICIOS_TEXTO;
